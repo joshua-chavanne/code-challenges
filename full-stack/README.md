@@ -1,58 +1,68 @@
-Coding challenge or existing code?
-==================================
+# Food Stack
+___
+## San Francisco Food Truck Search Service
 
-The [coding challenge](coding_challenge.md) is optional if you already have
-some code that you're proud of and can share with us.
+A simple search by location and range (in miles) for food trucks in San Francisco using data.sfgov.org,
+focused on making a small front-end view.
 
-Existing code
--------------
+Can be viewed live at: [http://laudable.info](http://laudable.info)
+Primary repo at: [https://github.com/joshua-chavanne/food-stack](https://github.com/joshua-chavanne/food-stack)
 
-If you have existing code, please follow the following guidelines:
+Requirements:
+ * [JQuery (tested with JQuery 3.1.0)](https://jquery.com/download/)
+ * [Underscore (underscore 1.8.3)](http://underscorejs.org/)
+ * [Backbone (Backbone 1.3.3)](http://backbonejs.org/)
+ * [LeafletJS (Leaflet ^0.7.7)](http://leafletjs.com/)
 
-* Include a link to the hosted repository (e.g. Github, Bitbucket...). We cannot
-  review archives or single files.
-* The repo should include a README that follows the [principles described
-  below](#readme) In particular, please make sure to include high-level
-  explanation about what the code is doing.
-* Ideally, the code you're providing:
-  * Has been written by you alone. If not, please tell us which part you wrote
-    and are most proud of in the README.
-  * Is leveraging web technologies.
-  * Is deployed and hosted somewhere.
+Additional Requirements:
+ * [Mapbox Access Token](https://www.mapbox.com/studio/account/tokens/) - Requires free sign-up
 
-Readme
-------
+Optional Requirements (for quick install):
+ * [Node.js](https://nodejs.org)
+ * [npm](https://npmjs.com)
 
-Regardless of whether it's your own code or our coding challenge, write your
-README as if it was for a production service. Include the following items:
+Services Used:
+ * [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro)
+ * [Mapbox](https://www.mapbox.com/)
 
-* Description of the problem and solution.
-* Whether the solution focuses on back-end, front-end or if it's full stack.
-* Reasoning behind your technical choices, including architectural. Trade-offs
-  you might have made, anything you left out, or what you might do differently
-  if you were to spend additional time on the project.
-* Link to other code you're particularly proud of.
-* Link to your resume or public profile.
-* Link to to the hosted application where applicable.
+## Installation:
 
-How we review
--------------
+### Quick install (requires Node):
 
-Your application will be reviewed by at least three of our engineers. The
-aspects of your code we will judge include:
+#### Step One
+```
+git clone https://github.com/joshua-chavanne/food-stack food-stack
+cd food-stack
+npm install
+```
+#### Step Two
+Copy example-config.js to config.js.
+Get a Mapbox Access Token.
+Configure Mapbox user ID and Access Token in config.js
 
-* Clarity: does the README clearly explains the problem and solution?
-* Correctness: does the application do what was asked? If there is anything
-  missing, does the README explain why it is missing?
-* Code quality: is the code simple, easy to understand, and maintainable?  Are
-  there any code smells or other red flags?
-* Testing: how thorough are the automated tests? Will they be difficult to
-  change if the requirements of the application were to change?
-* UX: is the web interface understandable and pleasing to use?
-* Technical choices: do choices of libraries, databases, architecture etc. seem
-  appropriate for the chosen application?
+```
+var AppConfig = AppConfig || {};
 
-Coding Challenge
-----------------
+AppConfig.data  = {
+  mapboxId: '<user ID>',
+  accessToken: '<access token'
+}
+```
 
-[Guidelines can be found here.](coding_challenge.md)
+Visit index.html in your browser, or configure your server to serve it.
+
+### Slower install (requires path changes)
+#### Step One
+ * Download repo by clicking "Clone or download"
+#### Step Two
+ * Download required libraries and link in src tags
+#### Step Three
+* Follow Step Two from Quick install.
+
+### Todos:
+(Things I'd do had I spent more time on this)
+ * Parse the non-normalized days, and allow sort by days open.
+ * Use better practices for library loading and passing of data to AppObj
+
+Attributions:
+ - [Distance Formula - Geodatasource.com (LGPLv3)](http://www.geodatasource.com/developers/javascript)

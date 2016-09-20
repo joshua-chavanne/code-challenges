@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="node_modules/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Modak|Baloo+Bhaina" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Truck and Carter</h1>
+      <h2>San Francisco Food Truck Finder</h2>
+    </header>
+    <div id="mapid"></div>
+    <div id="controls" class="open">
+      <div id="controller">[x]</div>
+      <form>
+        <label>Location:</label><br />
+        <input id="locationInput" type="text" name="locationInput" placeholder="Please enter any San Francisco address"/>
+        <div id="locationLatLong"><span></span></div>
+        <label>Range (miles): </label><span id="distanceValue">.25</span><br />
+        <input id="distanceControl" type="range" name="acceptableDistance" min=".01" max=7 step=".01" value=".25" />
+        <button id="formSubmit" type="submit" name="button">Submit</button>
+      </form>
+    </div>
+    <div id="status">
+    </div>
+    <footer>
+      <div>Made across the Bay with Love in Oakland, Ca<br /> by <br />Joshua Chavanne 2016</div>
+    </footer>
+  </body>
+    <script type="text/javascript" src="ui.js"></script>
+</html>
